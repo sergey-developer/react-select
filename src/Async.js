@@ -14,6 +14,7 @@ const propTypes = {
 		PropTypes.node
 	]),
 	loadOptions: PropTypes.func.isRequired,    // callback to load options asynchronously; (inputValue: string, callback: Function): ?Promise
+	clearOptionsOnSelection: React.PropTypes.bool,   // clears options after selecting a value when `multi` is true; defaults to true
 	multi: PropTypes.bool,                     // multi-value input
 	options: PropTypes.array.isRequired,             // array of options
 	pagination: PropTypes.bool,								 // automatically load more options when the option list is scrolled to the end; default to false
@@ -46,6 +47,7 @@ const defaultProps = {
 	options: [],
 	pagination: false,
 	searchPromptText: 'Type to search',
+	clearOptionsOnSelection: true,
 };
 
 export default class Async extends Component {
@@ -225,7 +227,7 @@ export default class Async extends Component {
 			options: (isLoading && loadingPlaceholder && !isLoadingPage) ? [] : options,
 			ref: (ref) => (this.select = ref),
 			onChange: (newValues) => {
-				if (this.props.multi && this.props.value && (newValues.length > this.props.value.length)) {
+				if (this.props.multi && this.props.clearOptionsOnSelection && this.props.value && (newValues.length > this.props.value.length)) {
 					this.clearOptions();
 				}
 				this.props.onChange(newValues);
