@@ -17,16 +17,10 @@ const propTypes = {
 	clearOptionsOnSelection: React.PropTypes.bool,   // clears options after selecting a value when `multi` is true; defaults to true
 	multi: PropTypes.bool,                     // multi-value input
 	options: PropTypes.array.isRequired,             // array of options
-<<<<<<< HEAD
-	placeholder: PropTypes.oneOfType([         // field placeholder, displayed when there's no value (shared with Select)
-		PropTypes.string,
-		PropTypes.node
-=======
 	pagination: PropTypes.bool,											 // automatically load more options when the option list is scrolled to the end; default to false
 	placeholder: React.PropTypes.oneOfType([         // field placeholder, displayed when there's no value (shared with Select)
 		React.PropTypes.string,
 		React.PropTypes.node
->>>>>>> feat(pagination): add async pagination
 	]),
 	noResultsText: PropTypes.oneOfType([       // field noResultsText, displayed when no options come back from the server
 		PropTypes.string,
