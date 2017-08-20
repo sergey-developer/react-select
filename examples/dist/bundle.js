@@ -46,8 +46,8 @@ var propTypes = {
 	multi: _propTypes2['default'].bool, // multi-value input
 	options: _propTypes2['default'].array.isRequired, // array of options
 	pagination: _propTypes2['default'].bool, // automatically load more options when the option list is scrolled to the end; default to false
-	placeholder: _react2['default'].PropTypes.oneOfType([// field placeholder, displayed when there's no value (shared with Select)
-	_react2['default'].PropTypes.string, _react2['default'].PropTypes.node]),
+	placeholder: _propTypes2['default'].oneOfType([// field placeholder, displayed when there's no value (shared with Select)
+	_propTypes2['default'].string, _propTypes2['default'].node]),
 	noResultsText: _propTypes2['default'].oneOfType([// field noResultsText, displayed when no options come back from the server
 	_propTypes2['default'].string, _propTypes2['default'].node]),
 	onChange: _propTypes2['default'].func, // onChange handler: function (newValue) {}
@@ -1509,11 +1509,13 @@ var Select = (function (_React$Component) {
 			if (valueType !== 'string' && valueType !== 'number' && valueType !== 'boolean') return value;
 			var options = props.options;
 			var valueKey = props.valueKey;
+			var handleUnknownValue = props.handleUnknownValue;
 
 			if (!options) return;
 			for (var i = 0; i < options.length; i++) {
 				if (options[i][valueKey] === value) return options[i];
 			}
+			if (handleUnknownValue) return handleUnknownValue(value, props);
 		}
 	}, {
 		key: 'setValue',
@@ -2146,6 +2148,7 @@ Select.propTypes = {
 	escapeClearsValue: _propTypes2['default'].bool, // whether escape clears the value when the menu is closed
 	filterOption: _propTypes2['default'].func, // method to filter a single option (option, filterString)
 	filterOptions: _propTypes2['default'].any, // boolean to enable default filtering or function to filter the options array ([options], filterString, [values])
+	handleUnknownValue: _propTypes2['default'].func, // return new option object for unknown value
 	ignoreAccents: _propTypes2['default'].bool, // whether to strip diacritics when filtering
 	ignoreCase: _propTypes2['default'].bool, // whether to perform case-insensitive filtering
 	inputProps: _propTypes2['default'].object, // custom attributes for the Input

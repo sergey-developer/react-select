@@ -490,11 +490,12 @@ class Select extends React.Component {
 	expandValue (value, props) {
 		const valueType = typeof value;
 		if (valueType !== 'string' && valueType !== 'number' && valueType !== 'boolean') return value;
-		let { options, valueKey } = props;
+		let { options, valueKey, handleUnknownValue } = props;
 		if (!options) return;
 		for (var i = 0; i < options.length; i++) {
 			if (options[i][valueKey] === value) return options[i];
 		}
+		if (handleUnknownValue) return handleUnknownValue(value, props);
 	}
 
 	setValue (value) {
@@ -1063,6 +1064,7 @@ Select.propTypes = {
     escapeClearsValue: PropTypes.bool,    // whether escape clears the value when the menu is closed
     filterOption: PropTypes.func,         // method to filter a single option (option, filterString)
     filterOptions: PropTypes.any,         // boolean to enable default filtering or function to filter the options array ([options], filterString, [values])
+    handleUnknownValue: PropTypes.func,		// return new option object for unknown value
     ignoreAccents: PropTypes.bool,        // whether to strip diacritics when filtering
     ignoreCase: PropTypes.bool,           // whether to perform case-insensitive filtering
     inputProps: PropTypes.object,         // custom attributes for the Input
