@@ -77,12 +77,12 @@ const GithubUsersPagination = React.createClass({
 				</div>
 				<div className="checkbox-list">
 					<label className="checkbox">
-					   <input type="checkbox" className="checkbox-control" checked={this.state.creatable} onChange={this.toggleCreatable} />
-					   <span className="checkbox-label">Creatable?</span>
+						<input type="checkbox" className="checkbox-control" checked={this.state.creatable} onChange={this.toggleCreatable} />
+						<span className="checkbox-label">Creatable?</span>
 					</label>
 					<label className="checkbox">
-					   <input type="checkbox" className="checkbox-control" checked={this.state.backspaceRemoves} onChange={this.toggleBackspaceRemoves} />
-					   <span className="checkbox-label">Backspace Removes?</span>
+						<input type="checkbox" className="checkbox-control" checked={this.state.backspaceRemoves} onChange={this.toggleBackspaceRemoves} />
+						<span className="checkbox-label">Backspace Removes?</span>
 					</label>
 				</div>
 				<div className="hint">This example uses fetch.js for showing Async options with Promises</div>
