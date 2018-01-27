@@ -326,7 +326,11 @@ describe('Async', () => {
 				ignoreCase: true
 			});
 			typeSearchText('A');
-			expect(asyncNode.textContent, 'to begin with', 'A');
+			expect(
+				asyncNode.children[0].children[0].children[0].children[2].textContent,
+				'to begin with',
+				'A'
+			);
 		});
 	});
 
