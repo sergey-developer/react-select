@@ -14,7 +14,7 @@ const propTypes = {
 		PropTypes.node
 	]),
 	loadOptions: PropTypes.func.isRequired,    // callback to load options asynchronously; (inputValue: string, callback: Function): ?Promise
-	clearOptionsOnSelection: React.PropTypes.bool,   // clears options after selecting a value when `multi` is true; defaults to true
+	clearOptionsOnSelection: PropTypes.bool,   // clears options after selecting a value when `multi` is true; defaults to true
 	multi: PropTypes.bool,                     // multi-value input
 	options: PropTypes.array.isRequired,             // array of options
 	pagination: PropTypes.bool,								 // automatically load more options when the option list is scrolled to the end; default to false
