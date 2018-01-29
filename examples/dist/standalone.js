@@ -43,7 +43,7 @@ var propTypes = {
 	loadingPlaceholder: _propTypes2['default'].oneOfType([// replaces the placeholder while options are loading
 	_propTypes2['default'].string, _propTypes2['default'].node]),
 	loadOptions: _propTypes2['default'].func.isRequired, // callback to load options asynchronously; (inputValue: string, callback: Function): ?Promise
-	clearOptionsOnSelection: _react2['default'].PropTypes.bool, // clears options after selecting a value when `multi` is true; defaults to true
+	clearOptionsOnSelection: _propTypes2['default'].bool, // clears options after selecting a value when `multi` is true; defaults to true
 	multi: _propTypes2['default'].bool, // multi-value input
 	options: _propTypes2['default'].array.isRequired, // array of options
 	pagination: _propTypes2['default'].bool, // automatically load more options when the option list is scrolled to the end; default to false
