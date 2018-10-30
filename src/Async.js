@@ -5,6 +5,7 @@ import stripDiacritics from './utils/stripDiacritics';
 
 const propTypes = {
 	autoload: PropTypes.bool.isRequired,       // automatically call the `loadOptions` prop on-mount; defaults to true
+	isRequired: PropTypes.bool,
 	cache: PropTypes.any,                      // object to use to cache results; set to null/false to disable caching
 	children: PropTypes.func.isRequired,       // Child function responsible for creating the inner Select component; (props: Object): PropTypes.element
 	ignoreAccents: PropTypes.bool,             // strip diacritics when filtering; defaults to true
@@ -39,6 +40,7 @@ const defaultCache = {};
 
 const defaultProps = {
 	autoload: true,
+	isRequired: false,
 	cache: defaultCache,
 	children: defaultChildren,
 	ignoreAccents: true,
