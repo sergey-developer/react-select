@@ -239,6 +239,7 @@ export default class Async extends Component {
 			...this.props,
 			...props,
 			isLoading,
+			isRequired,
 			onInputChange: this._onInputChange,
 			onMenuScrollToBottom: this._onMenuScrollToBottom,
 		});
