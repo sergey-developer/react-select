@@ -1461,7 +1461,7 @@ var Select = (function (_React$Component) {
 			if (!this.props.onMenuScrollToBottom) return;
 			var target = event.target;
 
-			if (target.scrollHeight > target.offsetHeight && !(target.scrollHeight - target.offsetHeight - target.scrollTop)) {
+			if (target.scrollHeight > target.offsetHeight && (target.scrollHeight - target.offsetHeight <= target.scrollTop)) {
 				this.props.onMenuScrollToBottom(this.state.inputValue);
 			}
 		}
