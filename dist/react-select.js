@@ -2053,6 +2053,13 @@ var Select = (function (_React$Component) {
 						style: this.props.menuStyle,
 						onScroll: this.handleMenuScroll,
 						onMouseDown: this.handleMouseDownOnMenu },
+					_react2['default'].createElement(
+					'div',
+					{ ref: function(ref) {
+							return _this.menuListEndPoint = ref;		
+						}
+					}
+					)
 					menu
 				)
 			);
