@@ -1458,6 +1458,7 @@ var Select = (function (_React$Component) {
 	}, {
 		key: 'handleMenuScroll',
 		value: function handleMenuScroll(event) {
+			console.log('test')
 			if (!this.props.onMenuScrollToBottom) return;
 			var target = event.target;
 
